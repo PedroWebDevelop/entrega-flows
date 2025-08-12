@@ -13,3 +13,7 @@ instruçoes
 !.github/workflows
 # But do not ignore the workflows directory itself
 instruçoes.projeto.txt
+instruçoes.projeto.txt
+README.md
+/src/guiass
+.guiass

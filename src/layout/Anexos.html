@@ -1,0 +1,27 @@
+<!--Tabela de Anexos: obrigatório a inclusão de pelo menos 1 documento-->
+<!--Os documentos anexados deverão ser armazenados em memória (blob e session storage) para envio-->
+<!--O Botão Excluir (lixeira) - Ao excluir o documento, deverá ser excluído da memória-->
+<!--O Botão Visualizar (olho) - Ao visualizar o documento, deve ser feito o download-->
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Anexos</h3>
+    </div>
+    <div class="panel-body">
+        <button type="button" class="btn btn-primary" id="add-anexo">Incluir Anexo</button>
+        <input type="file" id="fileInput" style="display:none;">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="anexos-table">
+                <thead>
+                    <tr>
+                        <th>Arquivo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas de anexos renderizadas via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
