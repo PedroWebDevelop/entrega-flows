@@ -1,5 +1,5 @@
 .idea
-instruçoes
+idea/*
 *.iml
 *.ipr
 *.iws
@@ -9,11 +9,6 @@ instruçoes
 *.ear
 ./.github
 .github/*
-# Ignore all files in the .github directory
+
 !.github/workflows
-# But do not ignore the workflows directory itself
-instruçoes.projeto.txt
-instruçoes.projeto.txt
 README.md
-/src/guiass
-.guiass

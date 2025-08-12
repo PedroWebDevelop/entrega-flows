@@ -1,32 +1,73 @@
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Produtos</h3>
-    </div>
-    <div class="panel-body">
-        <button type="button" class="btn btn-primary" id="add-product">Adicionar Produto</button>
-        <div class="table-responsive">
-            <table class="table table-bordered" id="products-table">
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Unidade de Medida</th>
-                        <th>Quantidade em Estoque</th>
-                        <th>Valor Unitário</th>
-                        <th>Valor Total</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Linhas de produtos renderizadas via JS -->
-                </tbody>
-            </table>
+<div class="container fs-xx-huge-margin-top">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Produtos</h3>
         </div>
+        <div class="panel-body">
+          <div class="fs-card mb-4 p-3">
+            <div class="fs-card-header d-flex justify-content-between align-items-center">
+              <span>Lista de Produtos</span>
+              <button type="button" class="fs-btn fs-btn-primary fs-btn-sm" id="btnOpenProdutoModal" data-toggle="modal" data-target="#modalProduto">Adicionar Produto</button>
+            </div>
+            <div class="fs-card-body" style="margin-top:20px;">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="products-table">
+                  <thead>
+                    <tr>
+                      <th>Descrição</th>
+                      <th>Unidade</th>
+                      <th>Qtde</th>
+                      <th>Valor Unitário</th>
+                      <th>Valor Total</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- O JS irá renderizar aqui -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
-<!--Tabela de Produtos: obrigatório a inclusão de pelo menos 1 item-->
-<!--Descrição: obrigatório-->
-<!--Unidade de Medida: obrigatório-->
-<!--Quantidade em Estoque: obrigatório-->
-<!--Valor Unitário: obrigatório-->
-<!--Valor Total: obrigatório (bloqueado, deve ser preenchido automaticamente considerando o valor unitário x a quantidade em estoque)-->
+<!-- Modal para cadastro de produto -->
+<div class="modal fade" id="modalProduto" tabindex="-1" role="dialog" aria-labelledby="modalProdutoLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form id="formProduto">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modalProdutoLabel">Adicionar Produto</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="descricaoProduto">Descrição <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="descricaoProduto" required>
+          </div>
+          <div class="form-group">
+            <label for="unidadeProduto">Unidade de Medida <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="unidadeProduto" required>
+          </div>
+          <div class="form-group">
+            <label for="qtdeProduto">Quantidade em Estoque <span class="text-danger">*</span></label>
+            <input type="number" class="form-control" id="qtdeProduto" required>
+          </div>
+          <div class="form-group">
+            <label for="valorUnitarioProduto">Valor Unitário <span class="text-danger">*</span></label>
+            <input type="number" step="0.01" class="form-control" id="valorUnitarioProduto" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="fs-btn fs-btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="fs-btn fs-btn-primary" id="btnSalvarProduto">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

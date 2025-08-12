@@ -1,141 +1,134 @@
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Cadastro de Fornecedor</h3>
+<div class="container fs-xx-huge-margin-top">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Dados do Fornecedor</h3>
+        </div>
+        <div class="panel-body">
+          <div id="formFornecedor">
+            <div class="fs-card mb-4">
+              <div class="fs-card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="razaoSocial">Razão Social <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="razaoSocial" value="{{razaoSocial}}" required>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nomeFantasia">Nome Fantasia <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nomeFantasia" value="{{nomeFantasia}}" required>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cnpj">CNPJ <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="cnpj" value="{{cnpj}}" required>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="inscricaoEstadual">Inscrição Estadual</label>
+                            <input type="text" class="form-control" id="inscricaoEstadual" value="{{inscricaoEstadual}}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="inscricaoMunicipal">Inscrição Municipal</label>
+                            <input type="text" class="form-control" id="inscricaoMunicipal" value="{{inscricaoMunicipal}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="cep">CEP <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="cep" value="{{cep}}" required>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <label for="endereco">Endereço <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="endereco" value="{{endereco}}" required readonly>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="numero">Número <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="numero" value="{{numero}}" required>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="complemento">Complemento</label>
+                            <input type="text" class="form-control" id="complemento" value="{{complemento}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="bairro">Bairro <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="bairro" value="{{bairro}}" required readonly>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="municipio">Município <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="municipio" value="{{municipio}}" required readonly>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="estado">Estado <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="estado" value="{{estado}}" required readonly>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nomeContato">Nome do Contato <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nomeContato" value="{{nomeContato}}" required>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="telefone">Telefone <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="telefone" value="{{telefone}}" required>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">E-mail <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" value="{{email}}" required>
+                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success btn-lg .fs-text-center .fs-max-full-width .alert-success">CADASTRAR</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="panel-body">
-        <form id="supplier-form">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="razaoSocial">Razão Social:</label>
-                        <div class="input-group">
-                            <input type="text" id="razaoSocial" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="nomeFantasia">Nome Fantasia:</label>
-                        <div class="input-group">
-                            <input type="text" id="nomeFantasia" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="cnpj">CNPJ:</label>
-                        <div class="input-group">
-                            <input type="text" id="cnpj" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="inscricaoEstadual">Inscrição Estadual:</label>
-                        <div class="input-group">
-                            <input type="text" id="inscricaoEstadual" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="inscricaoMunicipal">Inscrição Municipal:</label>
-                        <div class="input-group">
-                            <input type="text" id="inscricaoMunicipal" class="form-control">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="cep">CEP:</label>
-                        <div class="input-group">
-                            <input type="text" id="cep" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="form-group">
-                        <label for="endereco">Endereço:</label>
-                        <div class="input-group">
-                            <input type="text" id="endereco" class="form-control" required readonly>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="numero">Número:</label>
-                        <div class="input-group">
-                            <input type="text" id="numero" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="complemento">Complemento:</label>
-                        <div class="input-group">
-                            <input type="text" id="complemento" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="bairro">Bairro:</label>
-                        <div class="input-group">
-                            <input type="text" id="bairro" class="form-control" required readonly>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="municipio">Município:</label>
-                        <div class="input-group">
-                            <input type="text" id="municipio" class="form-control" required readonly>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="estado">Estado:</label>
-                        <div class="input-group">
-                            <input type="text" id="estado" class="form-control" required readonly>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="contato">Nome da Pessoa de Contato:</label>
-                        <div class="input-group">
-                            <input type="text" id="contato" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="telefone">Telefone:</label>
-                        <div class="input-group">
-                            <input type="tel" id="telefone" class="form-control" required pattern="[0-9]{10,11}">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="email">E-mail:</label>
-                        <div class="input-group">
-                            <input type="email" id="email" class="form-control" required />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+  </div>
 </div>
