@@ -1,1 +1,15 @@
 .idea
+instruçoes
+*.iml
+*.ipr
+*.iws
+*.class
+*.jar
+*.war
+*.ear
+./.github
+.github/*
+# Ignore all files in the .github directory
+!.github/workflows
+# But do not ignore the workflows directory itself
+instruçoes.projeto.txt
