@@ -22,8 +22,7 @@ $(function() {
         },
 
         bindEvents: function() {
-            // Evento para abrir modal de anexo (data-toggle já faz isso)
-            // Evento para upload do componente Fluig
+
             document.addEventListener('upload-component-file', function(e) {
                 const files = e.detail.files;
                 if (files && files.length) {
@@ -36,26 +35,31 @@ $(function() {
             });
 
             // Evento para upload do input file padrão (fallback)
-            $(document).off('change', '#fileInputFallback').on('change', '#fileInputFallback', function(e) {
-                const file = e.target.files[0];
-                if (!file) return;
+            $(document).off('submit', '#formAnexo').on('submit', '#formAnexo', function(e) {
+                e.preventDefault();
+                const file = $('#fileInputFallback')[0].files[0];
+                if (!file) {
+                    alert('Selecione um arquivo!');
+                    return;
+                }
                 StorageService.armazenarAnexo(file).then(() => {
                     FormAnexos.renderAnexos();
                     $('#modalAnexo').modal('hide');
                 });
-                $(this).val('');
+                $('#fileInputFallback').val('');
             });
 
-            // Evento para remover anexo
+
             $(document).off('click', '.remover-anexo').on('click', '.remover-anexo', function() {
                 const id = $(this).data('id');
+                console.log('[FormAnexos] remover-anexo - id:', id);
                 StorageService.removerAnexo(id);
                 FormAnexos.renderAnexos();
             });
 
-            // Evento para visualizar anexo
             $(document).off('click', '.visualizar-anexo').on('click', '.visualizar-anexo', function() {
                 const id = $(this).data('id');
+                console.log('[FormAnexos] visualizar-anexo - id:', id);
                 StorageService.downloadAnexo(id);
             });
         }

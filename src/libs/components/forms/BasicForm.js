@@ -1,9 +1,7 @@
 import $ from 'jquery';
-import { validarObrigatorio, validarEmail } from '../inputs/Input.js';
-import { buscarEnderecoPorCep } from '../../../utils/viaCepService.js';
-import viaCepService from '../../../utils/viaCepService.js';
+import FLUIGC from 'fluig-component-library';
 
-const  {buscarEndereco  } = viaCepService;
+
 
 const BasicForm = {
     init() {

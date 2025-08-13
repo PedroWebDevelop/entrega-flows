@@ -1,3 +1,4 @@
+<div class="fluig-style-guide">
 <div class="container fs-xx-huge-margin-top">
   <div class="row">
     <div class="col-md-12">
@@ -13,14 +14,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="razaoSocial">Razão Social <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="razaoSocial" value="{{razaoSocial}}" required>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
+                            <input type="text" class="form-control" id="razaoSocial" value="{{razaoSocial}}" required autocomplete="organization">
+                            <div id="razaoSocial-error" class="invalid-feedback"></div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nomeFantasia">Nome Fantasia <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nomeFantasia" value="{{nomeFantasia}}" required>
+                            <input type="text" class="form-control" id="nomeFantasia" value="{{nomeFantasia}}" required autocomplete="organization">
                             <div class="invalid-feedback">Campo obrigatório.</div>
                         </div>
                     </div>
@@ -36,99 +37,87 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="inscricaoEstadual">Inscrição Estadual</label>
-                            <input type="text" class="form-control" id="inscricaoEstadual" value="{{inscricaoEstadual}}">
+                            <input type="text" class="form-control" id="inscricaoEstadual" value="{{inscricaoEstadual}}" autocomplete="off">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="inscricaoMunicipal">Inscrição Municipal</label>
-                            <input type="text" class="form-control" id="inscricaoMunicipal" value="{{inscricaoMunicipal}}">
+                            <input type="text" class="form-control" id="inscricaoMunicipal" value="{{inscricaoMunicipal}}" autocomplete="off">
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="cep">CEP <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="cep" value="{{cep}}" required>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="cep">CEP <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="cep" required autocomplete="postal-code">
+                                    <div class="invalid-feedback">Campo obrigatório.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <label for="endereco">Endereço <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="endereco" required readonly autocomplete="street-address">
+                                    <div class="invalid-feedback">Campo obrigatório.</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="form-group">
-                            <label for="endereco">Endereço <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="endereco" value="{{endereco}}" required readonly>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="bairro">Bairro <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="bairro" required readonly autocomplete="address-level3">
+                                    <div class="invalid-feedback">Campo obrigatório.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="municipio">Município <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="municipio" required readonly autocomplete="address-level2">
+                                    <div class="invalid-feedback">Campo obrigatório.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="estado">Estado <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="estado" required readonly autocomplete="address-level1">
+                                    <div class="invalid-feedback">Campo obrigatório.</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="numero">Número <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="numero" value="{{numero}}" required>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="complemento">Complemento</label>
-                            <input type="text" class="form-control" id="complemento" value="{{complemento}}">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="bairro">Bairro <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="bairro" value="{{bairro}}" required readonly>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="municipio">Município <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="municipio" value="{{municipio}}" required readonly>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="estado">Estado <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="estado" value="{{estado}}" required readonly>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="nomeContato">Nome do Contato <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nomeContato" value="{{nomeContato}}" required>
+                            <input type="text" class="form-control" id="nomeContato" value="{{nomeContato}}" required autocomplete="name">
                             <div class="invalid-feedback">Campo obrigatório.</div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="telefone">Telefone <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="telefone" value="{{telefone}}" required>
+                            <input type="text" class="form-control" id="telefone" value="{{telefone}}" required autocomplete="tel">
                             <div class="invalid-feedback">Campo obrigatório.</div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="email">E-mail <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="email" value="{{email}}" required>
+                            <input type="email" class="form-control" id="email" value="{{email}}" required autocomplete="email">
                             <div class="invalid-feedback">Campo obrigatório.</div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-success btn-lg .fs-text-center .fs-max-full-width .alert-success">CADASTRAR</button>
                 </div>
               </div>
+                <button type="button" id="btnSalvarFornecedor" class="btn btn-success btn-lg fs-text-center fs-max-full-width alert-success">CADASTRAR</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>

@@ -11,4 +11,6 @@ idea/*
 .github/*
 
 !.github/workflows
-README.md
+intruçaoparagpt
+node_modeles
+.idea

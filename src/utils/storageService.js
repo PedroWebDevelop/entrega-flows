@@ -52,7 +52,17 @@ const StorageService = {
     },
     downloadAnexo: function(fileId) {
         try {
+            const produtos = StorageService.getFromSession('produtos') || [];
             const anexos = StorageService.getFromSession('anexos') || [];
+
+            if (produtos.length === 0) {
+                alert('Inclua pelo menos 1 produto!');
+                return;
+            }
+            if (anexos.length === 0) {
+                alert('Inclua pelo menos 1 anexo!');
+                return;
+            }
             const anexo = anexos.find(a => a.id === fileId);
             if (anexo) {
                 const link = document.createElement('a');

@@ -1,9 +1,10 @@
 <script id="tplAnexo" type="x-tmpl-mustache">
     <tr>
-        <td>{{nomeArquivo}}</td>
-        <td>
-            <button class="btn btn-default btn-xs"><span class="fluigicon fluigicon-download-circle"></span></button>
-            <button class="btn btn-danger btn-xs"><span class="fluigicon fluigicon-trash"></span></button>
-        </td>
-    </tr>
+      <td>{{name}}</td>
+    <td>{{size}}</td>
+    <td>
+      <button class="visualizar-anexo btn btn-sm" data-id="{{id}}">👁</button>
+      <button class="remover-anexo btn btn-sm btn-danger" data-id="{{id}}">🗑</button>
+    </td>
+  </tr>
 </script>

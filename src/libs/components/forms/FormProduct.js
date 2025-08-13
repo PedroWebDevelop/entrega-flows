@@ -1,11 +1,16 @@
 $(function() {
+    console.log('FormProduct.js carregado');
     function getProdutos() {
-        const data = localStorage.getItem('produtos');
+        const data = sessionStorage.getItem('produtos');
         return data ? JSON.parse(data) : [];
     }
 
     function saveProdutos(produtos) {
-        localStorage.setItem('produtos', JSON.stringify(produtos));
+        if (produtos.length === 0) {
+            StorageService.removeFromSession('produtos');
+        } else {
+            sessionStorage.setItem('produtos', JSON.stringify(produtos));
+        }
     }
 
     function renderProdutos() {
@@ -38,11 +43,15 @@ $(function() {
     // Adicionar produto via modal
     $(document).off('submit', '#formProduto').on('submit', '#formProduto', function(e) {
         e.preventDefault();
+        console.log('Submit do produto acionado');
         const descricao = $('#descricaoProduto').val();
         const unidade = $('#unidadeProduto').val();
         const qtde = parseInt($('#qtdeProduto').val(), 10) || 0;
         const valorUnitario = parseFloat($('#valorUnitarioProduto').val()) || 0;
         const valorTotal = (qtde * valorUnitario).toFixed(2);
+
+        // Adicione este log:
+        console.log('Produto a ser salvo:', { descricao, unidade, qtde, valorUnitario, valorTotal });
 
         if (!descricao || !unidade || !qtde || !valorUnitario) {
             alert('Preencha todos os campos!');
@@ -78,4 +87,8 @@ $(function() {
     if ($('#products-table').length) {
         renderProdutos();
     }
+    window.FormProduct = {
+        init: renderProdutos
+    };
 });
+

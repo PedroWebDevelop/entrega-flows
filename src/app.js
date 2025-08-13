@@ -1,3 +1,6 @@
+
+
+
 const App = {
     init() {
         this.loadLayout('src/layout/LayoutHome.html')
@@ -32,28 +35,26 @@ const App = {
             });
     },
 
-    // Função para carregar conteúdo em um elemento específico
-    loadContent(path, targetSelector) {
+
+    loadContent(path, targetSelector, data = {}) {
         fetch(path)
             .then(response => response.text())
             .then(template => {
                 const content = document.querySelector(targetSelector);
                 if (template.includes('{{')) {
-                    const data = {};
-                    content.innerHTML = Mustache.render(template, data);
+                    content.innerHTML = Mustache.render(template || '', data);
                 } else {
                     content.innerHTML = template;
                 }
-                // Inicializa componentes SEMPRE após renderizar
                 setTimeout(() => {
-                    if ($('#anexos-table').length && window.FormAnexos) {
+                    if (window.FormAnexos && $('#anexos-table').length) {
                         window.FormAnexos.init();
                     }
-                    if ($('#products-table').length && window.FormProduct) {
+                    if (window.FormProduct && $('#products-table').length) {
                         window.FormProduct.init();
                     }
-                    if (window.BasicForm && $('#supplier-form').length) {
-                        window.BasicForm.init();
+                    if (window.SupplierForm && $('#supplier-form').length) {
+                        window.SupplierForm.init();
                     }
                     if (window.createSupplierChart){
                         window.createSupplierChart();

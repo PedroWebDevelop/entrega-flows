@@ -1,4 +1,6 @@
 function createSupplierChart() {
+    if (!document.getElementById('supplier-chart')) return;
+
     let data = {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [

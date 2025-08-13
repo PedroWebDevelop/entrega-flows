@@ -1,34 +1,40 @@
+# Entrega do Desafio Front-End
+
+---
+
 ## Desculpas pelo atraso
 
-Por conta de uma demanda pessoal, tive poucas horas disponíveis para trabalhar no projeto, especialmente nesta última madrugada. Mesmo assim, busquei entregar o melhor possível dentro do tempo que tive.
+Devido a uma demanda pessoal e ao fato de ter tentado aplicar aprendizado em ferramentas novas em apenas um dia, optei por organizar o projeto com uma arquitetura mais complexa do que o necessário para uma single page.
 
-## O que tentei melhorar
+Mesmo assim, os erros foram encontrados e, apesar das limitações de tempo, envio o projeto assim pelo horário.
 
-- Pensei bastante na arquitetura do projeto, separando os componentes JS e conhecendo ferramentas novas, que gostei bastante de usar.
-- Usei Mustache para renderização dinâmica dos dados.
-- Integrei o localStorage para persistência das informações do fornecedor.
-- Implementei validações dos campos obrigatórios ..
-
-## Decisão técnica
-
-Optei por não seguir o caminho de fazer tudo em uma única página (single page), pois quis focar na organização, escalabilidade e facilidade de manutenção, alinhando com o padrão do projeto.
+---
 
 ## Intenção final
 
-Minha intenção era completar todas as funcionalidades, incluindo testes e melhorias para escalabilidade. Apesar do tempo limitado, aprendi bastante e pretendo evoluir ainda mais o projeto.
+Minha intenção era completar todas as funcionalidades, incluindo testes e melhorias para escalabilidade. Aprendi bastante durante o desenvolvimento e pretendo evoluir ainda mais o projeto.
+
+---
 
 ## Como rodar
 
 1. Clone o repositório.
-2. Instale as dependências.
-3. Inicie o servidor local.
-
-## Funcionalidades
-
-- Estrutura Pensada para escalabilidade, 
-- novas ideias ao conhecer a ferramenta, possiveis ganhos de tempo e escalabilidade
-- implementaçoes incompletas .
+2. Abra o arquivo `index.html` no navegador ou inicie um servidor local.
+3. Todas as funcionalidades implementadas podem ser testadas.
 
 ---
 
-Qualquer dúvida, estou à disposição!
+## Funcionalidades
+
+- Estrutura pensada para escalabilidade.
+- Renderização dinâmica de dados via Mustache.
+- Persistência de dados usando `sessionStorage`.
+- Validações básicas dos campos obrigatórios.
+- Upload e remoção de anexos funcionando parcialmente.
+
+---
+
+## Observações
+
+- Algumas funcionalidades ficaram incompletas devido ao tempo limitado.
+- Apesar da arquitetura mais complexa, todas as partes implementadas foram testadas e estão funcionando dentro do escopo possível.

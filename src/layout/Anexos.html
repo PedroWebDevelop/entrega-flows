@@ -67,6 +67,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="fs-btn fs-btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="fs-btn fs-btn-primary" id="btnSalvarAnexo">Salvar</button>
         </div>
       </form>
     </div>
@@ -75,11 +76,43 @@
 
 <!-- Template Mustache para cada linha de anexo -->
 <script id="tplAnexo" type="x-tmpl-mustache">
-    <tr>
-        <td>{{name}}</td>
-        <td>
-            <button class="fs-btn fs-btn-link fs-btn-sm visualizar-anexo" data-id="{{id}}">Visualizar</button>
-            <button class="fs-btn fs-btn-link fs-btn-sm text-danger remover-anexo" data-id="{{id}}">Excluir</button>
-        </td>
-    </tr>
+  <tr>
+      <td>{{name}}</td>
+      <td>
+          <button class="fs-btn fs-btn-link fs-btn-sm visualizar-anexo" data-id="{{id}}">Visualizar</button>
+          <button class="fs-btn fs-btn-link fs-btn-sm text-danger remover-anexo" data-id="{{id}}">Excluir</button>
+      </td>
+  </tr>
+</script>
+
+
+<script>
+  $(function() {
+    $('#cep').on('blur', function() {
+      console.log('blur disparou');
+      const cep = $(this).val().replace(/\D/g, '');
+      if (!cep) {
+        alert('CEP obrigatório!');
+        return;
+      }
+      if (cep.length !== 8) {
+        alert('CEP inválido!');
+        return;
+      }
+      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+              .then(res => res.json())
+              .then(data => {
+                if (data.erro) {
+                  alert('CEP não encontrado!');
+                  $('#endereco, #bairro, #municipio, #estado').val('');
+                } else {
+                  $('#endereco').val(data.logradouro || '');
+                  $('#bairro').val(data.bairro || '');
+                  $('#municipio').val(data.localidade || '');
+                  $('#estado').val(data.uf || '');
+                }
+              })
+              .catch(() => alert('Erro ao buscar CEP!'));
+    });
+  });
 </script>
